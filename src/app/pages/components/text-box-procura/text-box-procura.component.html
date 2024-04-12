@@ -1,0 +1,8 @@
+<mat-form-field appearance="outline" style="width: 100%;">
+  <mat-label>Codigo</mat-label>
+  <input matInput type="text" [(ngModel)]="ngModelMoura" (blur)="percaDeFoco()">
+  <mat-icon matPrefix (click)="openDialog()" class="Lupa">search</mat-icon>
+  <button *ngIf="ngModelMoura" matSuffix mat-icon-button (click)="limparCampo()">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
