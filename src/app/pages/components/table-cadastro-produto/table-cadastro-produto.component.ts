@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 
@@ -32,6 +32,8 @@ export class TableCadastroProdutoComponent implements OnInit, AfterViewInit{
 
   public dataSource = new MatTableDataSource(ELEMENT_DATA);
 
+  @Output() selectRowEmitter = new EventEmitter<any>();
+
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
   constructor() { }
@@ -49,7 +51,7 @@ export class TableCadastroProdutoComponent implements OnInit, AfterViewInit{
   }
 
   selectRow(element: any) {
-    console.log(element); 
+    this.selectRowEmitter.emit(element);
   }
 
 }

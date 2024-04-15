@@ -4,7 +4,7 @@
       <mat-card-title>Cadastro de Regra de Imposto</mat-card-title>
     </mat-card-header>
     <mat-card-content class="flex-center">
-      <app-text-box-procura [ngModelMoura]="codigo" (ResultadoProcuraEmit)="ResultadoProcuraEmit($event)"></app-text-box-procura>
+      <app-text-box-procura [ngModelMoura]="codigo" (ResultadoProcuraEmit)="ResultadoProcuraEmit($event)" [TabelaTipo]="'Imposto'"></app-text-box-procura>
       <mat-form-field appearance="outline">
         <mat-label>Nome</mat-label>
         <input matInput type="text" [(ngModel)]="nome">

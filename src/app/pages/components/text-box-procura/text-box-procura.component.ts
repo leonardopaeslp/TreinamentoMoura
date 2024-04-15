@@ -15,6 +15,9 @@ export class TextBoxProcuraComponent implements OnInit, OnDestroy  {
   @Output() ResultadoProcuraEmit = new EventEmitter<any>();
 
   @Input()
+  public TabelaTipo: string = '';
+
+  @Input()
   get ngModelMoura(): any {
     return this._ngModelMoura;
   }
@@ -37,7 +40,7 @@ export class TextBoxProcuraComponent implements OnInit, OnDestroy  {
   openDialog(): void {
     const dialogRef = this.dialog.open(ModalProcuraComponent, {
       width: '1200px',
-      data: { name: 'Angular' } // Você pode passar dados para o componente do modal, se necessário
+      data: { TabelaTipo: this.TabelaTipo } // Você pode passar dados para o componente do modal, se necessário
     });
   
     dialogRef.afterClosed().subscribe(result => {

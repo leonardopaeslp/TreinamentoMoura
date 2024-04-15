@@ -3,8 +3,8 @@
     <mat-card-title>Procura</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <!-- <app-table-regra-imposto></app-table-regra-imposto> -->
-    <app-table-cadastro-produto></app-table-cadastro-produto>
+    <app-table-regra-imposto *ngIf="data.TabelaTipo === 'Imposto'"></app-table-regra-imposto>
+    <app-table-cadastro-produto *ngIf="data.TabelaTipo === 'Produto'"></app-table-cadastro-produto>
   </mat-card-content>
   <mat-card-actions align="end" style="padding-top: 10px;">
     <button mat-raised-button color="primary" (click)="fecharModall()">Fechar</button>

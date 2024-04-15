@@ -1,10 +1,10 @@
 <div class="login-container">
   <mat-card style="padding: 20px; width: 800px;">
     <mat-card-header style="padding: 20px;">
-      <mat-card-title>Cadastro de Regra de Imposto</mat-card-title>
+      <mat-card-title>Cadastro de Produto</mat-card-title>
     </mat-card-header>
     <mat-card-content class="flex-center">
-      <app-text-box-procura [ngModelMoura]="codigo" (ResultadoProcuraEmit)="ResultadoProcuraEmit($event)"></app-text-box-procura>
+      <app-text-box-procura [ngModelMoura]="codigo" (ResultadoProcuraEmit)="ResultadoProcuraEmit($event)" [TabelaTipo]="'Produto'"></app-text-box-procura>
       <mat-form-field appearance="outline">
         <mat-label>Nome</mat-label>
         <input matInput type="text" [(ngModel)]="nome">

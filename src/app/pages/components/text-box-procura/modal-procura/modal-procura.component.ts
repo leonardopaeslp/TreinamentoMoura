@@ -1,7 +1,7 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, Inject, OnInit, ViewChild } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 export interface PeriodicElement {
   name: string;
@@ -37,9 +37,10 @@ export class ModalProcuraComponent implements OnInit, AfterViewInit  {
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
 
-  constructor(public dialogRef: MatDialogRef<ModalProcuraComponent>) { }
+  constructor(public dialogRef: MatDialogRef<ModalProcuraComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
+    console.log(this.data);
   }
 
   ngAfterViewInit() {
@@ -56,9 +57,8 @@ export class ModalProcuraComponent implements OnInit, AfterViewInit  {
   }
 
   selectRow(element: any) {
-    console.log(element); // Exemplo de manipulação: imprimir no console
+    console.log(element);
     // Aqui você pode implementar outras lógicas conforme necessário,
-    // como abrir um modal com detalhes do elemento ou armazenar o elemento selecionado.
   }
   
 

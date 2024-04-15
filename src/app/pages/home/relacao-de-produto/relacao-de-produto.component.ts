@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-relacao-de-produto',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RelacaoDeProdutoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  public selectRowEmitter($event: any){
+      /* Redirecionando e passando dados */
+    this.router.navigate(['/home/cadProd'], { state: { data: $event } });
   }
 
 }

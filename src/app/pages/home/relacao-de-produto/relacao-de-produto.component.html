@@ -1,3 +1,13 @@
-<p>
-  relacao-de-produto works!
-</p>
+<div class="login-container">
+  <mat-card style="padding: 20px; width: 80%;">
+    <mat-card-header style="padding: 20px;">
+      <mat-card-title>Relação de Produto</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="flex-center">
+      <app-table-cadastro-produto (selectRowEmitter)="selectRowEmitter($event)"></app-table-cadastro-produto>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-raised-button color="primary">Gerar</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

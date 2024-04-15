@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro-de-produto',
@@ -13,8 +14,15 @@ export class CadastroDeProdutoComponent implements OnInit {
   public precoVenda: any;
   public margemReal: any;
   public regraImp: any;
+  public dataFromRelacao: any;
 
-  constructor() { }
+  constructor(private router: Router) {
+    const navigation = this.router.getCurrentNavigation();
+    this.dataFromRelacao = navigation?.extras.state?.['data'];
+    /* Dados advindos da tela Relçaõ de Produto */
+    console.log(this.dataFromRelacao);
+
+   }
 
   ngOnInit() {
   }
